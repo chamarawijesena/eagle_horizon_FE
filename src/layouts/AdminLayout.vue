@@ -83,7 +83,7 @@ const notifications = [
   { id: 3, text: 'Maintenance ticket TKT-091 overdue', time: '1h ago', type: 'red' },
 ]
 
-const branches = ['Head Office — Melbourne', 'North Branch — Sydney', 'South Branch — Brisbane']
+const branches = ['Main Store — Yattogoda', 'New Store — Kobbewala']
 const selectedBranch = ref(branches[0])
 </script>
 
