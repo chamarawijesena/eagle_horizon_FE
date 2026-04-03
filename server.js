@@ -51,7 +51,7 @@ app.use('*all', async (req, res) => {
       render = (await import('./dist/server/entry-server.js')).render
     }
 
-    const { stream } = render(url)
+    const { stream } = await render(url)
 
     const [htmlStart, htmlEnd] = template.split('<!--app-html-->')
 
