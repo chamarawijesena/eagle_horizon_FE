@@ -23,7 +23,7 @@ export const routes = [
     children: [
       { path: '', redirect: '/admin/dashboard' },
       { path: 'dashboard',   name: 'admin-dashboard',   component: () => import('../pages/admin/AdminDashboard.vue') },
-      { path: 'inventory',   name: 'admin-inventory',   component: () => import('../pages/admin/AdminPlaceholder.vue'), props: { section: 'Inventory' } },
+      { path: 'inventory',   name: 'admin-inventory',   component: () => import('../pages/admin/AdminInventory.vue') },
       { path: 'orders',      name: 'admin-orders',      component: () => import('../pages/admin/AdminPlaceholder.vue'), props: { section: 'Orders' } },
       { path: 'returns',     name: 'admin-returns',     component: () => import('../pages/admin/AdminPlaceholder.vue'), props: { section: 'Returns' } },
       { path: 'customers',   name: 'admin-customers',   component: () => import('../pages/admin/AdminPlaceholder.vue'), props: { section: 'Customers' } },
