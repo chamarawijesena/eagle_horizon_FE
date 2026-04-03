@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { setToken } from '../stores/auth'
+import { setAuth } from '../stores/auth'
 
 const router = useRouter()
 
@@ -52,9 +52,11 @@ async function handleLogin() {
 
     // Accept token from common DRF response shapes
     const token = data?.key || data?.token || data?.access || data?.access_token
-    if (token) setToken(token)
+    if (token && data?.user) setAuth(token, data.user)
+    else if (token) setAuth(token, { id: 0, username: '', email: '', first_name: '', last_name: '', role: '' })
 
-    router.push('/api-test')
+    const role = data?.user?.role ?? ''
+    router.push(role === 'ADMIN' ? '/admin/dashboard' : '/api-test')
   } catch (e: any) {
     error.value = 'Unable to reach the server. Please try again.'
   } finally {
