@@ -1,15 +1,21 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
+
+const route = useRoute()
+const isAdmin = computed(() => !!route.meta.isAdmin)
 </script>
 
 <template>
-  <div id="app-wrapper">
-    <NavBar />
-    <main>
+  <div id="app-wrapper" :class="{ 'admin-mode': isAdmin }">
+    <NavBar v-if="!isAdmin" />
+    <main v-if="!isAdmin">
       <RouterView />
     </main>
-    <FooterBar />
+    <RouterView v-else />
+    <FooterBar v-if="!isAdmin" />
   </div>
 </template>
 
@@ -53,6 +59,11 @@ body {
 #app-wrapper {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+#app-wrapper.admin-mode {
+  display: block;
   min-height: 100vh;
 }
 
