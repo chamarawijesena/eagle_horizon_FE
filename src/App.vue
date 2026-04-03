@@ -1,31 +1,77 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import ApiTester from './components/ApiTester.vue'
+import NavBar from './components/NavBar.vue'
+import FooterBar from './components/FooterBar.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app-wrapper">
+    <NavBar />
+    <main>
+      <RouterView />
+    </main>
+    <FooterBar />
   </div>
-  <ApiTester />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+:root {
+  --primary: #1B3A6B;
+  --primary-dark: #0D1F3C;
+  --accent: #E8A020;
+  --accent-hover: #c9881a;
+  --light: #F5F7FA;
+  --white: #ffffff;
+  --text: #1a1a2e;
+  --text-muted: #5a6a80;
+  --border: #dce3ed;
+  --shadow: 0 4px 20px rgba(27, 58, 107, 0.12);
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+  display: block;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+#app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
 </style>

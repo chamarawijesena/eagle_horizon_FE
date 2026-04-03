@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { authToken } from '../stores/auth'
 
 const url = ref('http://127.0.0.1:8000/api/v1/inventory/equipment-categories/')
 const response = ref('')
@@ -13,7 +14,11 @@ async function send() {
   response.value = ''
   status.value = null
   try {
-    const res = await fetch(url.value)
+    const headers: Record<string, string> = {}
+    if (authToken.value) {
+      headers['Authorization'] = `Token ${authToken.value}`
+    }
+    const res = await fetch(url.value, { headers })
     status.value = res.status
     const data = await res.json()
     response.value = JSON.stringify(data, null, 2)
