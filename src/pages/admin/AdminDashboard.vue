@@ -61,11 +61,11 @@ const kpiCards = [
 ]
 
 const recentOrders = [
-  { id: 'ORD-2041', customer: 'Meridian Corp', items: 14, value: '$12,400', status: 'processing', date: 'Today, 9:12am' },
-  { id: 'ORD-2040', customer: 'Harlan Homes', items: 6, value: '$8,750', status: 'delivered', date: 'Today, 8:05am' },
-  { id: 'ORD-2039', customer: 'Park & Lane Pty', items: 32, value: '$31,200', status: 'pending', date: 'Yesterday, 4:44pm' },
-  { id: 'ORD-2038', customer: 'J. Thornton Group', items: 4, value: '$5,600', status: 'delivered', date: 'Yesterday, 1:20pm' },
-  { id: 'ORD-2037', customer: 'Sunrise Builders', items: 21, value: '$18,900', status: 'overdue', date: '1 Apr, 10:00am' },
+  { id: 'ORD-2041', customer: 'Meridian Corp', items: 14, value: 'LKR 12,400', status: 'processing', date: 'Today, 9:12am' },
+  { id: 'ORD-2040', customer: 'Harlan Homes', items: 6, value: 'LKR 8,750', status: 'delivered', date: 'Today, 8:05am' },
+  { id: 'ORD-2039', customer: 'Park & Lane Pty', items: 32, value: 'LKR 31,200', status: 'pending', date: 'Yesterday, 4:44pm' },
+  { id: 'ORD-2038', customer: 'J. Thornton Group', items: 4, value: 'LKR 5,600', status: 'delivered', date: 'Yesterday, 1:20pm' },
+  { id: 'ORD-2037', customer: 'Sunrise Builders', items: 21, value: 'LKR 18,900', status: 'overdue', date: '1 Apr, 10:00am' },
 ]
 
 const statusMap: Record<string, { label: string; cls: string }> = {
